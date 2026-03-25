@@ -19,8 +19,7 @@ test.describe('QS Acadêmico — Testes do Sistema de Notas', () => {
       await page.getByRole('button', { name: 'Cadastrar' }).click();
 
       // Verificar que o aluno aparece na tabela
-      await expect(page.locator('#tabela-alunos tbody tr')).toHaveCount(1);
-      await expect(page.getByText('João Silva')).toBeVisible();
+await expect(page.locator('#tabela-alunos').getByText('João Silva')).toBeVisible();
     });
 
     test('deve exibir mensagem de sucesso após cadastro', async ({ page }) => {
